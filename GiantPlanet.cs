@@ -6,12 +6,13 @@ namespace COMP123_Assignment3
     /* Created By: Christina May Pakingan
        Student No. 301121940
        Date Created: 2020-07-12
+       Date Modified: 2020-07-14
        COMP 123 - Assignment 3 */
 
     class GiantPlanet :Planet, IHasMoons, IHasRings
     {
 
-    //Variable declaration
+    //Variable declaration - Private Field
         private string _type;
 
     //Constructor
@@ -25,25 +26,35 @@ namespace COMP123_Assignment3
             }
             else
             {
-                Console.WriteLine("Incorrect Type entered. Gas and Ice are only the 2 options.");
+                Console.WriteLine("Incorrect Type entered. Gas and Ice are the only options.");
             }
 
 
         }
          public bool HasMoons()
-        {
-            bool hasmoons = (MoonCount > 0);
-            return hasmoons;
-        }
+         {
+             if (MoonCount > 0)
+             {
+                 return true;
+             }
+             else
+             {
+                 return false;
+             }
+            
+         }
 
 
          public bool HasRings()
          {
-             bool hasrings = (RingCount > 0);
-
-             return hasrings;
-
-
+             if (RingCount > 0)
+             {
+                 return true;
+             }
+             else
+             {
+                 return false;
+             }
          }
 
     }
